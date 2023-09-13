@@ -1,7 +1,7 @@
 ---
 title: "Week 02: COVID Visualization Activity"
 date: "September, 11 2023"
-author: "**`[[`**Your Name**`]]`**"
+author: "Cancan Jin"
 ---
 
 Today, we'll be working with a data set related to COVID.
@@ -33,9 +33,31 @@ For now, see what you can do just using `ggplot`.
 covid_data_count |> 
   filter(state == "MA") |> 
   ggplot(aes(x = date, y = Cases, color = race)) + geom_line()
+
+#Mycode
+ggplot(
+  data = covid_data_count,
+  mapping = aes(x = date, y = Cases, color = state)) +
+  geom_point()
 ```
 
 1. Write code for a plot and describe what you observe?
+
+ggplot(
+  data = covid_data_count,
+  mapping = aes(x = date, y = Cases, color = state)) +
+  geom_point()
+  
+I noticed that the number of deaths is largest in the state NV from 2021.04 to 2022.01. Also, the number of deaths doubled for most of the states from July to January.
+
 2. Are there any conclusions you can draw?
+
+The number of death grows rapidly from April to July and from October to January.
+
 3. What were you not able to do due to not having the R knowledge?
+
+I want to set up a simulated model for the data to estimate the cases of death in the future.
+
 4. What other data would be useful to better understand this data?
+
+I think "covid_data_count" would be more useful to understand the data. In the data set, the cases of different races are specified, which could better demonstrate the data.
